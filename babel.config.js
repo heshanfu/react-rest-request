@@ -3,7 +3,7 @@ module.exports = function config(api) {
 
     return {
         presets: [
-            '@babel/preset-env',
+            ['@babel/preset-env', { useBuiltIns: 'entry' }],
             '@babel/preset-react',
         ],
         plugins: [
@@ -14,12 +14,6 @@ module.exports = function config(api) {
                 },
             ],
             '@babel/plugin-proposal-object-rest-spread',
-            [
-                '@babel/plugin-transform-runtime',
-                {
-                    regenerator: true,
-                },
-            ],
         ],
     };
 };
